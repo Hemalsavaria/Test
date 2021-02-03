@@ -1,6 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimary1">#8690fa</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#1D1D1B</color>
+    <color name="purpl2">#7A31A6</color>
+    <color name="purple3">#A4508B</color>
+    <color name="pink">#ff6781</color>
+    <color name="text_color">#616161</color>
+    <color name="orange2">#D95644</color>
+    <color name="facebook">#3a559f</color>
+    <color name="invalid">#d90000</color>
+    <color name="five">#009302</color>
+    <color name="button_black">#1D1D1B</color>
+    <color name="two">#73c8a9</color>
+    <color name="one">#373b44</color>
+    <color name="three">#56ab2f</color>
+    <color name="four">#a8e063</color>
+    <color name="light_grey2">#F0F0F0</color>
+    <color name="yellow">#FFC107</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="button_color">#FF8556</color>
+    <color name="status_bar_color">#FAFAFA</color>
+    <color name="colorAccent2">#FF4081</color>
+    <color name="blue">#05C0F2</color>
+    <color name="White">#fff</color>
+    <color name="grey_bg">#E6E7E8</color>
+    <color name="new_bg">#F6F7FB</color>
+
+
+    <color name="light_purple_color">#BBADE4</color>
+    <color name="background">#fafafa</color>
+    <color name="background2">#F2F3F5</color>
+
+
+    <color name="h">#15CED6</color>
+    <color name="lightbule">#D0F5FE</color>
+    <color name="h2">#25BDDA</color>
+    <color name="dark_blue">#439BE2</color>
+    <color name="flipkart_blue">#2874f0</color>
+    <color name="black">#000</color>
+    <color name="toolbar_purple">#7E3FF3</color>
+    <color name="toolbar_color">#20477A</color>
+    <color name="status_bar_purple">#9965F4</color>
+    <color name="green">#006400</color>
+    <color name="red">#FF0000</color>
+    <color name="main">#283751</color>
+    <color name="list_divider">#d1d0d0</color>
+    <color name="list_divider1">#ececec</color>
+    <color name="list_item_selected_state">#F4F6F6</color>
+    <color name="list_item_normal_state">#FFFFFF</color>
+    <color name="selecter">#8279d6f9</color>
+    <color name="navigation_sep_color">#f2f2f2</color>
+    <color name="navigation_txt_color">#666666</color>
+
+
+    <color name="green1">#96CC39</color>
+    <color name="green2">#6BA32D</color>
+    <color name="green3">#547A1D</color>
+
+
+    <color name="red1">#F25746</color>
+    <color name="red2">#ED1C24</color>
+    <color name="red3">#BA151B</color>
+
+
+    <color name="darkWhite">#cfd8dc</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="light_grey">#cccccc</color>
+
+
+    <color name="gen_black">#000000</color>
+    <color name="gen_white">#FFFFFF</color>
+    <color name="green_light">#43A047</color>
+    <color name="grey_light">#E0E0E0</color>
+
+    <color name="first">#3498db</color>
+    <color name="second">#9b59b6</color>
+    <color name="third">#e74c3c</color>
+    <color name="fourth">#e67e22</color>
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#3498db</color>
+    <color name="bg_screen2">#e74c3c</color>
+    <color name="bg_screen3">#9b59b6</color>
+    <color name="bg_screen4">#1abc9c</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#2980b9</color>
+    <color name="dot_dark_screen2">#c0392b</color>
+    <color name="dot_dark_screen3">#8e44ad</color>
+    <color name="dot_dark_screen4">#27ae60</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#6a89cc</color>
+    <color name="dot_light_screen2">#e55039</color>
+    <color name="dot_light_screen3">#82ccdd</color>
+    <color name="dot_light_screen4">#38ada9</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+    <color name="bgcolor">#59C1F0</color>
+
 </resources>

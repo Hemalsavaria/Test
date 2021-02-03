@@ -1,20 +1,18 @@
 package com.example.myapplication;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
-
 public class MainActivity extends AppCompatActivity {
+    Button login_button;
+    EditText login_number, login_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,46 +21,37 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.toolbar_color, this.getTheme()));
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.toolbar_color));
         }
 
-        return super.onOptionsItemSelected(item);
+        inti();
+    }
+
+    void inti() {
+        login_button = findViewById(R.id.login_button);
+        login_number = findViewById(R.id.login_number);
+        login_password = findViewById(R.id.login_password);
+
+        login_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                if (login_number.getText().toString().length() == 0) {
+//                    login_number.setError("Enter Mobile Number");
+//                } else if (login_number.getText().toString().length() != 10) {
+//                    login_number.setError("Enter Valid Mobile Number");
+//                } else if (login_password.getText().toString().equals("")) {
+//                    login_password.setError("Enter Password");
+//                } else {
+//                    finish();
+//                    startActivity(new Intent(MainActivity.this, DashBoard.class));
+//                }
+
+                finish();
+                startActivity(new Intent(MainActivity.this, DashBoard.class));
+            }
+        });
     }
 }
