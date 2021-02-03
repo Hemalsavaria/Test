@@ -73,8 +73,8 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
         TextView doctor_name, emp_post, contact_number, email_id, address, password;
         ImageView down_details;
         GridLayout gridLayout;
-        LinearLayout details, mr_details;
-
+        TextView details;
+        TextView  mr_details;
 
         public ViewHolder(View list) {
             super(list);
@@ -82,7 +82,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
             doctor_name = list.findViewById(R.id.doctor_name);
             emp_post = list.findViewById(R.id.hospital_name);
 
-            down_details = list.findViewById(R.id.down_details);
+//            down_details = list.findViewById(R.id.down_details);
             details = list.findViewById(R.id.details);
             mr_details = list.findViewById(R.id.mr_details);
 

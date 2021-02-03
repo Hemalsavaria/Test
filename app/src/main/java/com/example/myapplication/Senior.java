@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +39,7 @@ public class Senior extends AppCompatActivity {
     ArrayList<SeniorModel> seniorlist = new ArrayList<>();
     SeniorAdapter seniorAdapter;
     RecyclerView recyclerView;
-
+ImageView back , add_senior;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +47,8 @@ public class Senior extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.toolbar_color, this.getTheme()));
@@ -53,12 +56,20 @@ public class Senior extends AppCompatActivity {
             getWindow().setStatusBarColor(getResources().getColor(R.color.toolbar_color));
         }
 
+        add_senior = findViewById(R.id.add_senior);
         recyclerView = findViewById(R.id.recylerview);
         seniorAdapter = new SeniorAdapter(seniorlist, Senior.this);
         recyclerView.setLayoutManager(new LinearLayoutManager(Senior.this));
         recyclerView.setAdapter(seniorAdapter);
         get_allDoctors();
 
+
+        add_senior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                add_senior_dialog();
+            }
+        });
     }
 
     void get_allDoctors() {
@@ -111,5 +122,12 @@ public class Senior extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return true;
+    }
+
+
+    public void add_senior_dialog(){
+      Dialog  dialog_new_senior = new Dialog(Senior.this, R.style.MyAlertDialogStyle);
+        dialog_new_senior.setContentView(R.layout.dialog_add_senior);
+        dialog_new_senior.show();
     }
 }

@@ -85,7 +85,7 @@ public class SeniorAdapter extends RecyclerView.Adapter<SeniorAdapter.ViewHolder
             doctor_name = list.findViewById(R.id.doctor_name);
             emp_post = list.findViewById(R.id.hospital_name);
             reports = list.findViewById(R.id.reports);
-            down_details = list.findViewById(R.id.down_details);
+//            down_details = list.findViewById(R.id.down_details);
             details = list.findViewById(R.id.details);
 
             mr_details = list.findViewById(R.id.mr_details);

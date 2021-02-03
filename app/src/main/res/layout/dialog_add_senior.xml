@@ -21,7 +21,7 @@
 			android:fontFamily="@font/avenir_regular"
 			android:gravity="center"
 			android:padding="@dimen/_5sdp"
-			android:text="New MR"
+			android:text="New Senior"
 			android:textColor="@color/white"
 			android:textSize="19sp" />
 	</LinearLayout>
@@ -34,7 +34,7 @@
 		android:padding="10dp">
 
 		<EditText
-			android:id="@+id/mr_name"
+
 			android:layout_width="match_parent"
 			android:layout_height="50dp"
 			android:layout_margin="10dp"
@@ -45,12 +45,11 @@
 			android:padding="10dp" />
 
 		<EditText
-			android:id="@+id/mr_contact"
+
 			android:layout_width="match_parent"
 			android:layout_height="50dp"
 			android:layout_margin="10dp"
 			android:background="@drawable/roundwhite_grey"
-
 			android:fontFamily="@font/avenir_regular"
 			android:hint="Contact Number"
 			android:inputType="number"
@@ -58,7 +57,7 @@
 			android:padding="@dimen/_5sdp" />
 
 		<EditText
-			android:id="@+id/mr_email"
+
 			android:layout_width="match_parent"
 			android:layout_height="50dp"
 			android:layout_margin="10dp"
@@ -78,40 +77,17 @@
 			android:hint="Create Password"
 			android:inputType="textEmailAddress"
 			android:padding="@dimen/_5sdp" />
-<!--		<LinearLayout-->
-<!--			android:layout_width="match_parent"-->
-<!--			android:layout_height="wrap_content"-->
-<!--			android:layout_margin="10dp"-->
-<!--			android:background="@drawable/roundwhite_grey">-->
 
-<!--			<Spinner-->
-<!--				android:id="@+id/area_list"-->
-<!--				android:layout_width="match_parent"-->
-<!--				android:layout_height="50dp"-->
-<!--				android:layout_weight="1"-->
+		<EditText
 
-<!--				android:entries="@array/city"-->
-<!--				android:padding="@dimen/_5sdp" />-->
-<!--		</LinearLayout>-->
-
-<!--		<LinearLayout-->
-<!--			android:layout_width="match_parent"-->
-<!--			android:layout_height="wrap_content"-->
-<!--			android:layout_margin="10dp"-->
-<!--			android:background="@drawable/roundwhite_grey">-->
-
-
-<!--			<Spinner-->
-<!--				android:id="@+id/city_list"-->
-<!--				android:layout_width="match_parent"-->
-<!--				android:layout_height="50dp"-->
-
-<!--				android:layout_weight="1"-->
-
-<!--				android:entries="@array/city"-->
-<!--				android:padding="@dimen/_5sdp" />-->
-<!--		</LinearLayout>-->
-
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:layout_margin="10dp"
+			android:background="@drawable/roundwhite_grey"
+			android:fontFamily="@font/avenir_regular"
+			android:hint="Designation"
+			android:inputType="textEmailAddress"
+			android:padding="@dimen/_5sdp" />
 
 		<LinearLayout
 			android:layout_width="wrap_content"

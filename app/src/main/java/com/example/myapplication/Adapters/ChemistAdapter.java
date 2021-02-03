@@ -73,7 +73,9 @@ public class ChemistAdapter extends RecyclerView.Adapter<ChemistAdapter.ViewHold
 
         ImageView down_details;
         GridLayout gridLayout;
-        LinearLayout details, mr_details;
+        LinearLayout details;
+
+      TextView  mr_details;
 
         public ViewHolder(View list) {
             super(list);
@@ -81,7 +83,7 @@ public class ChemistAdapter extends RecyclerView.Adapter<ChemistAdapter.ViewHold
             doctor_name = list.findViewById(R.id.doctor_name);
             hospital_name = list.findViewById(R.id.hospital_name);
 
-            down_details = list.findViewById(R.id.down_details);
+//            down_details = list.findViewById(R.id.down_details);
             details = list.findViewById(R.id.details);
             mr_details = list.findViewById(R.id.mr_details);
 
