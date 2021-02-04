@@ -42,7 +42,7 @@ public class DoctorReportAdapter extends RecyclerView.Adapter<DoctorReportAdapte
 
         holder.date.setText(model.getVisit_date());
         if (model.getVisit_status().equals("1")) {
-            holder.status.setText("Done");
+            holder.status.setText("Successful");
         } else {
             holder.status.setText("Pending");
         }

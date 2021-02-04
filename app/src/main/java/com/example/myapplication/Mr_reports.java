@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,12 +15,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Adapters.DoctorReportAdapter;
 import com.example.myapplication.Adapters.MRChemistListAdapter;
 import com.example.myapplication.Adapters.MRDoctorListAdapter;
 import com.example.myapplication.Apis.Api;
 import com.example.myapplication.Apis.ApiServices;
-import com.example.myapplication.Model.DoctorReportModel;
 import com.example.myapplication.Model.MR_chemist_Model;
 import com.example.myapplication.Model.MR_doctor_Model;
 import com.example.myapplication.Model.Result;
@@ -42,6 +42,11 @@ public class Mr_reports extends AppCompatActivity {
     TextView name, doctors, chemist;
     String id;
 
+
+    Spinner select_month, selecyear;
+    String select_month_data[] = {"January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    String selecyear_data[] = {"2021", "2020", "2019"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +65,13 @@ public class Mr_reports extends AppCompatActivity {
 
         doctors = findViewById(R.id.doctors);
         chemist = findViewById(R.id.chemist);
+        select_month = findViewById(R.id.select_month);
+        ArrayAdapter<String> adapter_month = new ArrayAdapter<String>(Mr_reports.this, R.layout.spinner_item, select_month_data);
+        select_month.setAdapter(adapter_month);
 
+        selecyear = findViewById(R.id.selectyear);
+        ArrayAdapter<String> adapter_selecyear = new ArrayAdapter<String>(Mr_reports.this, R.layout.spinner_item, selecyear_data);
+        selecyear.setAdapter(adapter_selecyear);
 
         id = getIntent().getStringExtra("mr_id");
         String mr_name = getIntent().getStringExtra("mr_name");

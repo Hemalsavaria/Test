@@ -42,7 +42,6 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
         holder.doctor_name.setText(model.getDoctor_name());
         holder.emp_post.setText(model.getMedical_hostpital_name());
 
-
         holder.contact_number.setText(model.getContact_no());
         holder.email_id.setText(model.getEmail_id());
         holder.address.setText(model.getArea_name() + ", " + model.getCity_name());
@@ -57,7 +56,6 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
                     holder.details.setVisibility(View.GONE);
                     open_details = false;
                 }
-
             }
         });
     }

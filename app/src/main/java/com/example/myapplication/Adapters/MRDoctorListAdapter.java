@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -63,16 +64,27 @@ public class MRDoctorListAdapter extends RecyclerView.Adapter<MRDoctorListAdapte
         ImageView down_details;
         GridLayout gridLayout;
         LinearLayout details, mr_details;
-
+CardView mr_dr_report_card;
         public ViewHolder(View list) {
             super(list);
 //            gridLayout = list.findViewById(R.id.staff_rec_design);
+            mr_dr_report_card = list.findViewById(R.id.mr_dr_report_card);
             doctor_name = list.findViewById(R.id.doctor_name);
             hospital_name = list.findViewById(R.id.hospital_name);
             counts = list.findViewById(R.id.counts);
             show_details = list.findViewById(R.id.show_details);
 
             show_details.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, Mr_doctor_visit_list_report.class);
+                    intent.putExtra("mr_id", mr_doctor_models.get(getAdapterPosition()).getMr_id());
+                    intent.putExtra("dr_id", mr_doctor_models.get(getAdapterPosition()).getDoctor_id());
+                    context.startActivity(intent);
+                }
+            });
+
+            mr_dr_report_card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, Mr_doctor_visit_list_report.class);
