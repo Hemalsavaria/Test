@@ -1,7 +1,6 @@
 package com.example.myapplication.Apis;
 
 
-
 import com.example.myapplication.Model.Result;
 
 import retrofit2.Call;
@@ -18,6 +17,26 @@ public interface ApiServices {
             @Field("emp_pass") String emp_pass,
             @Field("token") String token
     );
+
+
+    @FormUrlEncoded
+    @POST("get_city")
+    Call<Result> get_city(
+            @Field("test") String test
+    );
+
+    @FormUrlEncoded
+    @POST("get_area")
+    Call<Result> get_area(
+            @Field("test") String test
+    );
+
+    @FormUrlEncoded
+    @POST("get_post")
+    Call<Result> get_post(
+            @Field("test") String test
+    );
+
 
     @FormUrlEncoded
     @POST("get_all_doctor_list")
@@ -76,6 +95,25 @@ public interface ApiServices {
             @Field("mr_id") String mr_id,
             @Field("chemist_id") String chemist_id,
             @Field("month") String month
+    );
+
+    @FormUrlEncoded
+    @POST("add_MR")
+    Call<Result> add_MR(
+            @Field("mr_name") String mr_name,
+            @Field("contact") String contact,
+            @Field("emailid") String emailid,
+            @Field("area") String area,
+            @Field("city") String city
+    );
+
+    @FormUrlEncoded
+    @POST("add_senior")
+    Call<Result> add_senior(
+            @Field("senior_name") String senior_name,
+            @Field("contact") String contact,
+            @Field("emailid") String emailid,
+            @Field("post") String post
     );
 
 

@@ -31,6 +31,38 @@ public class Result {
     @SerializedName("senior_list")
     private ArrayList<SeniorModel> senior_list;
 
+    @SerializedName("city_list")
+    private ArrayList<CityModel> city_list;
+
+    @SerializedName("area_list")
+    private ArrayList<AreaModel> get_area;
+
+    @SerializedName("post_list")
+    private ArrayList<PostModel> post_list;
+
+    public ArrayList<PostModel> getPost_list() {
+        return post_list;
+    }
+
+    public void setPost_list(ArrayList<PostModel> post_list) {
+        this.post_list = post_list;
+    }
+
+    public ArrayList<AreaModel> getGet_area() {
+        return get_area;
+    }
+
+    public void setGet_area(ArrayList<AreaModel> get_area) {
+        this.get_area = get_area;
+    }
+
+    public ArrayList<CityModel> getCity_list() {
+        return city_list;
+    }
+
+    public void setCity_list(ArrayList<CityModel> city_list) {
+        this.city_list = city_list;
+    }
 
     public ArrayList<SeniorMrListModel> getSeniorMrList() {
         return SeniorMrList;
@@ -42,7 +74,6 @@ public class Result {
 
     @SerializedName("mr_data")
     private ArrayList<SeniorMrListModel> SeniorMrList;
-
 
 
     public ArrayList<SeniorModel> getSenior_list() {

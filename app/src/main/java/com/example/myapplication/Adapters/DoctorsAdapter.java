@@ -73,7 +73,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
         TextView doctor_name, emp_post, contact_number, email_id, address, password;
         ImageView down_details;
         GridLayout gridLayout;
-        TextView details;
+        LinearLayout details;
         TextView  mr_details;
 
         public ViewHolder(View list) {

@@ -119,7 +119,7 @@
 				android:orientation="vertical"
 				android:paddingLeft="@dimen/_10sdp"
 				android:paddingRight="@dimen/_10sdp"
-				android:visibility="visible">
+				android:visibility="gone">
 
 
 				<LinearLayout
