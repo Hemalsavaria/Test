@@ -3,6 +3,7 @@
     package="com.example.myapplication">
 
     <application
+        android:windowSoftInputMode="adjustResize"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,34 +11,42 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".SeniorMRList"
             android:label="@string/title_activity_senior_m_r_list"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".Senior"
             android:label="Senior List"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".Mr_chemist_visit_report"
             android:label="Chemist Visits Report"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".Mr_doctor_visit_list_report"
             android:label="Doctor Visits Report"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".Mr_reports"
             android:label="Doctor / Chemist List"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".MR"
             android:label="MR List"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".Chemist"
             android:label="@string/title_activity_chemist"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".Doctors"
             android:label="@string/title_activity_doctors"
             android:theme="@style/AppTheme.NoActionBar" />

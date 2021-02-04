@@ -116,5 +116,33 @@ public interface ApiServices {
             @Field("post") String post
     );
 
+    @FormUrlEncoded
+    @POST("add_Doctor")
+    Call<Result> add_Doctor(
+            @Field("doctor_name") String mr_name,
+            @Field("contact") String contact,
+            @Field("emailid") String emailid,
+            @Field("medical_hospital") String medical_hospital,
+            @Field("birth_date") String birth_date,
+            @Field("Ann_date") String Ann_date,
+            @Field("pra_date") String pra_date,
+            @Field("area") String area,
+            @Field("city") String city
+    );
+
+
+    @FormUrlEncoded
+    @POST("add_Chemist")
+    Call<Result> add_Chemist(
+            @Field("name") String mr_name,
+            @Field("contact") String contact,
+            @Field("emailid") String emailid,
+            @Field("medical_hospital") String medical_hospital,
+            @Field("birth_date") String birth_date,
+            @Field("Ann_date") String Ann_date,
+            @Field("pra_date") String pra_date,
+            @Field("area") String area,
+            @Field("city") String city
+    );
 
 }
