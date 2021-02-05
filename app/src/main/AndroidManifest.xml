@@ -1,71 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+	package="com.example.myapplication">
 
-    <application
-        android:windowSoftInputMode="adjustResize"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".SeniorMRList"
-            android:label="@string/title_activity_senior_m_r_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".Senior"
-            android:label="Senior List"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".Mr_chemist_visit_report"
-            android:label="Chemist Visits Report"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".Mr_doctor_visit_list_report"
-            android:label="Doctor Visits Report"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".Mr_reports"
-            android:label="Doctor / Chemist List"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".MR"
-            android:label="MR List"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".Chemist"
-            android:label="@string/title_activity_chemist"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".Doctors"
-            android:label="@string/title_activity_doctors"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".DashBoard"
-            android:label="@string/title_activity_dash_board"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:roundIcon="@mipmap/ic_launcher_round"
+		android:supportsRtl="true"
+		android:theme="@style/AppTheme"
+		android:windowSoftInputMode="adjustResize">
+		<activity
+			android:name=".Expense"
+			android:label="@string/title_activity_expense"
+			android:theme="@style/AppTheme.NoActionBar"></activity>
+		<activity
+			android:name=".Attendence"
+			android:label="@string/title_activity_attendence"
+			android:theme="@style/AppTheme.NoActionBar" />
+		<activity
+			android:name=".SeniorMRList"
+			android:label="@string/title_activity_senior_m_r_list"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".Senior"
+			android:label="Senior List"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".Mr_chemist_visit_report"
+			android:label="Chemist Visits Report"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".Mr_doctor_visit_list_report"
+			android:label="Doctor Visits Report"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".Mr_reports"
+			android:label="Doctor / Chemist List"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".MR"
+			android:label="MR List"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".Chemist"
+			android:label="@string/title_activity_chemist"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".Doctors"
+			android:label="@string/title_activity_doctors"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".DashBoard"
+			android:label="@string/title_activity_dash_board"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-    </application>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".MainActivity"
+			android:label="@string/app_name"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:windowSoftInputMode="adjustResize" />
+	</application>
 
 </manifest>

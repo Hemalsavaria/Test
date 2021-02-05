@@ -250,7 +250,40 @@
                         android:layout_marginTop="@dimen/_2sdp"
                         android:background="@color/grey_light" />
 
+                    <LinearLayout
+                        android:id="@+id/dwr_expense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_13sdp"
+                        android:background="#00FFFFFF"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp">
 
+                        <ImageView
+                            android:layout_width="@dimen/_23sdp"
+                            android:layout_height="@dimen/_23sdp"
+                            android:src="@drawable/ic_attendance" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/avenir_regular"
+                            android:gravity="left"
+                            android:text="Expense"
+                            android:textColor="@color/toolbar_color"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@color/grey_light" />
                 </LinearLayout>
 
             </LinearLayout>

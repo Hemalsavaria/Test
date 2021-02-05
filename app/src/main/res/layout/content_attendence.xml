@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/grey_bg"
+	android:orientation="vertical"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		app:contentPadding="5dp">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="2dp"
+				android:background="@color/white"
+				android:fontFamily="@font/avenir_regular"
+				android:gravity="center"
+				android:padding="5dp"
+				android:text="MR - Hemal savaria"
+				android:textColor="@color/black"
+				android:textSize="19sp" />
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/grey_bg" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_margin="5dp"
+					android:layout_marginBottom="2dp"
+					android:fontFamily="@font/avenir"
+					android:gravity="center"
+					android:padding="10dp"
+					android:text="P"
+					android:textColor="#81b214"
+					android:textSize="25sp"
+					android:textStyle="bold" />
+
+				<RelativeLayout
+					android:layout_width="1dp"
+					android:layout_height="match_parent"
+					android:layout_marginTop="10dp"
+					android:layout_marginBottom="10dp"
+					android:background="@color/grey_bg"
+					android:visibility="gone" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					android:padding="3dp">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="3dp"
+							android:text="Loggedin From   :"
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="3dp"
+							android:text="Headquarter"
+
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="3dp"
+							android:text="City :"
+
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="3dp"
+							android:text="Ahmedabad"
+
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="3dp"
+							android:text="Work type :"
+
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="3dp"
+							android:text="Meeting"
+
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="3dp"
+							android:text="Date :"
+							android:textColor="@color/black"
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="3dp"
+							android:text="05/02/2021"
+							android:textColor="@color/black"
+							android:textSize="15sp" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+			</LinearLayout>
+
+		</LinearLayout>
+	</androidx.cardview.widget.CardView>
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		app:contentPadding="5dp">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="2dp"
+				android:background="@color/white"
+				android:fontFamily="@font/avenir_regular"
+				android:gravity="center"
+				android:padding="5dp"
+				android:text="MR - Aman Gupta"
+				android:textColor="@color/black"
+				android:textSize="19sp" />
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/grey_bg" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_margin="10dp"
+					android:layout_marginBottom="2dp"
+					android:fontFamily="@font/avenir"
+					android:gravity="center"
+					android:padding="10dp"
+					android:text="P"
+					android:textColor="#81b214"
+					android:textSize="25sp"
+					android:textStyle="bold" />
+
+				<RelativeLayout
+					android:layout_width="1dp"
+					android:layout_height="match_parent"
+					android:layout_marginTop="10dp"
+					android:layout_marginBottom="10dp"
+					android:background="@color/grey_bg"
+					android:visibility="gone" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					android:padding="3dp">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="Loggedin From   :"
+
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="5dp"
+							android:text="Headquarter"
+
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="City :"
+
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="5dp"
+							android:text="Ahmedabad"
+
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="Work type :"
+
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="5dp"
+							android:text="Meeting"
+
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="3dp"
+							android:text="Date :"
+							android:textColor="@color/black"
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="3dp"
+							android:text="05/02/2021"
+							android:textColor="@color/black"
+							android:textSize="15sp" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+			</LinearLayout>
+		</LinearLayout>
+	</androidx.cardview.widget.CardView>
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="5dp"
+		app:contentPadding="5dp">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="2dp"
+				android:background="@color/white"
+				android:fontFamily="@font/avenir_regular"
+				android:gravity="center"
+				android:padding="5dp"
+				android:text="MR - Parth Chavda"
+				android:textColor="@color/black"
+				android:textSize="19sp" />
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/grey_bg" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_margin="10dp"
+					android:layout_marginBottom="2dp"
+					android:fontFamily="@font/avenir"
+					android:gravity="center"
+					android:padding="10dp"
+					android:text="A"
+					android:textColor="#cd0a0a"
+					android:textSize="25sp"
+					android:textStyle="bold" />
+
+				<RelativeLayout
+					android:layout_width="1dp"
+					android:layout_height="match_parent"
+					android:layout_marginTop="10dp"
+					android:layout_marginBottom="10dp"
+					android:background="@color/grey_bg"
+					android:visibility="gone" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					android:padding="3dp">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="Holiday type   :"
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="5dp"
+							android:text="SL"
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="Remark :"
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="5dp"
+							android:text="Medical Issue"
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="3dp"
+							android:text="Date :"
+							android:textColor="@color/black"
+							android:textSize="15sp" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="2dp"
+							android:layout_weight="1"
+							android:background="@color/white"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="left"
+							android:padding="3dp"
+							android:text="05/02/2021"
+							android:textColor="@color/black"
+							android:textSize="15sp" />
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</LinearLayout>
+		</LinearLayout>
+	</androidx.cardview.widget.CardView>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/attendence_recycle"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="gone"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

@@ -1,39 +1,41 @@
 <resources>
-    <string name="app_name">AvrivaAdmin</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+	<string name="app_name">AvrivaAdmin</string>
+	<string name="action_settings">Settings</string>
+	<!-- Strings used for fragments for navigation -->
+	<string name="first_fragment_label">First Fragment</string>
+	<string name="second_fragment_label">Second Fragment</string>
+	<string name="next">Next</string>
+	<string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_dash_board">DashBoard</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_doctors">Doctors</string>
-    <string name="title_activity_chemist">Chemist</string>
-    <string name="title_activity_m_r">MR</string>
-    <string name="title_activity_mr_reports">Mr_reports</string>
-    <string name="title_activity_mr_doctor_visit_list_report">Mr_doctor_visit_list_report</string>
-    <string name="title_activity_mr_chemist_visit_report">Mr_chemist_visit_report</string>
-    <string name="title_activity_test">test</string>
+	<string name="hello_first_fragment">Hello first fragment</string>
+	<string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+	<string name="title_activity_dash_board">DashBoard</string>
+	<string name="navigation_drawer_open">Open navigation drawer</string>
+	<string name="navigation_drawer_close">Close navigation drawer</string>
+	<string name="title_activity_doctors">Doctors</string>
+	<string name="title_activity_chemist">Chemist</string>
+	<string name="title_activity_m_r">MR</string>
+	<string name="title_activity_mr_reports">Mr_reports</string>
+	<string name="title_activity_mr_doctor_visit_list_report">Mr_doctor_visit_list_report</string>
+	<string name="title_activity_mr_chemist_visit_report">Mr_chemist_visit_report</string>
+	<string name="title_activity_test">test</string>
 
-    <string name="title_activity_senior">Senior</string>
-    <string name="title_activity_senior_m_r_list">SeniorMRList</string>
+	<string name="title_activity_senior">Senior</string>
+	<string name="title_activity_senior_m_r_list">SeniorMRList</string>
 
 
-    <string-array name="count">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
+	<string-array name="count">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
 
-    <string-array name="select_type_mr">
-        <item>Doctors</item>
-        <item>Chemist</item>
-    </string-array>
+	<string-array name="select_type_mr">
+		<item>Doctors</item>
+		<item>Chemist</item>
+	</string-array>
+	<string name="title_activity_attendence">Attendence</string>
+	<string name="title_activity_expense">Expense</string>
 
 
 </resources>
