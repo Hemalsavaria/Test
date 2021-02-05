@@ -151,5 +151,23 @@ public interface ApiServices {
             @Field("id") String mr_name
     );
 
+    @FormUrlEncoded
+    @POST("allocate_doctor_to_mr")
+    Call<Result> allocate_doctor_to_mr(
+            @Field("mr_id") String mr_id,
+            @Field("doctor_id") String doctor_id,
+            @Field("total_visit") String total_visit,
+            @Field("remain_visit") String remain_visit
+    );
+
+    @FormUrlEncoded
+    @POST("allocate_chemist_to_mr")
+    Call<Result> allocate_chemist_to_mr(
+            @Field("mr_id") String mr_id,
+            @Field("chemist_id") String doctor_id,
+            @Field("total_visit") String total_visit,
+            @Field("remain_visit") String remain_visit
+    );
+
 
 }

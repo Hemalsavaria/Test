@@ -6,7 +6,7 @@ public class DoctorModel {
 
 
     @SerializedName("id")
-    private Boolean success;
+    private String id;
 
     @SerializedName("doctor_name")
     private String doctor_name;
@@ -43,12 +43,12 @@ public class DoctorModel {
         this.contact_no = contact_no;
     }
 
-    public Boolean getSuccess() {
-        return success;
+    public String getId() {
+        return id;
     }
 
-    public void setSuccess(Boolean success) {
-        this.success = success;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDoctor_name() {

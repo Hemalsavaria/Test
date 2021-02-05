@@ -294,7 +294,11 @@ public class Mr_reports extends AppCompatActivity {
         });
     }
 
-    void allocate_doctor_to_mr() {
+
+
+
+
+    void allocate_doctor_to_mr(String mr_id, String doctor_id) {
 
         final ProgressDialog progressDialog = new ProgressDialog(Mr_reports.this);
         progressDialog.setMessage("Please wait...");
@@ -306,7 +310,7 @@ public class Mr_reports extends AppCompatActivity {
                 .build();
         ApiServices apiServices = retrofit.create(ApiServices.class);
 
-        Call<Result> call = apiServices.get_all_doctor_list("");
+        Call<Result> call = apiServices.allocate_doctor_to_mr(mr_id, doctor_id, "3", "3");
 
         call.enqueue(new Callback<Result>() {
             @Override
@@ -314,17 +318,14 @@ public class Mr_reports extends AppCompatActivity {
                 progressDialog.dismiss();
                 if (response.body() != null) {
                     if (response.body().getSuccess()) {
-                        Doctor_list.clear();
-                        doctor_chemist_name_list.clear();
-                        Doctor_list.addAll(response.body().getDoctor_list());
-                        for (int i = 0; i < Doctor_list.size(); i++) {
-                            doctor_chemist_name_list.add(Doctor_list.get(i).getDoctor_name());
-                        }
-                        arrayAdapter.notifyDataSetChanged();
+                        dialog_new_allocation.dismiss();
+                        get_Doctors_reports(MR_id);
                     } else {
+                        dialog_new_allocation.dismiss();
                         Toast.makeText(getApplicationContext(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
                     }
                 } else {
+                    dialog_new_allocation.dismiss();
                     Toast.makeText(getApplicationContext(), "Somethings are Wrong", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -332,12 +333,13 @@ public class Mr_reports extends AppCompatActivity {
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
                 progressDialog.dismiss();
+                dialog_new_allocation.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    void allocate_chemist_to_mr() {
+    void allocate_chemist_to_mr(String mr_id, String chemist_id) {
 
         final ProgressDialog progressDialog = new ProgressDialog(Mr_reports.this);
         progressDialog.setMessage("Please wait...");
@@ -349,7 +351,7 @@ public class Mr_reports extends AppCompatActivity {
                 .build();
         ApiServices apiServices = retrofit.create(ApiServices.class);
 
-        Call<Result> call = apiServices.get_all_doctor_list("");
+        Call<Result> call = apiServices.allocate_chemist_to_mr(mr_id, chemist_id, "3", "3");
 
         call.enqueue(new Callback<Result>() {
             @Override
@@ -357,17 +359,14 @@ public class Mr_reports extends AppCompatActivity {
                 progressDialog.dismiss();
                 if (response.body() != null) {
                     if (response.body().getSuccess()) {
-                        Doctor_list.clear();
-                        doctor_chemist_name_list.clear();
-                        Doctor_list.addAll(response.body().getDoctor_list());
-                        for (int i = 0; i < Doctor_list.size(); i++) {
-                            doctor_chemist_name_list.add(Doctor_list.get(i).getDoctor_name());
-                        }
-                        arrayAdapter.notifyDataSetChanged();
+                        dialog_new_allocation.dismiss();
+                        get_Chemist_reports(MR_id);
                     } else {
+                        dialog_new_allocation.dismiss();
                         Toast.makeText(getApplicationContext(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
                     }
                 } else {
+                    dialog_new_allocation.dismiss();
                     Toast.makeText(getApplicationContext(), "Somethings are Wrong", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -375,11 +374,11 @@ public class Mr_reports extends AppCompatActivity {
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
                 progressDialog.dismiss();
+                dialog_new_allocation.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
 
 
     private void open_dialog() {
@@ -391,7 +390,7 @@ public class Mr_reports extends AppCompatActivity {
         get_allDoctors();
 
         Spinner spn_selection_type = dialog_new_allocation.findViewById(R.id.select_type);
-        Spinner spn_doctor_chemist_names = dialog_new_allocation.findViewById(R.id.names_list);
+        final Spinner spn_doctor_chemist_names = dialog_new_allocation.findViewById(R.id.names_list);
         Spinner visit_count = dialog_new_allocation.findViewById(R.id.visit_count);
 
         ArrayAdapter spn_type_adapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, getResources().getTextArray(R.array.select_type_mr));
@@ -434,10 +433,13 @@ public class Mr_reports extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (selected_type == 0) {
-                    allocate_doctor_to_mr();
+                    String doctor_id = Doctor_list.get(spn_doctor_chemist_names.getSelectedItemPosition()).getId();
+                    allocate_doctor_to_mr(MR_id, doctor_id);
                 } else {
-                    allocate_chemist_to_mr();
+                    String chemist_id = chemist_list.get(spn_doctor_chemist_names.getSelectedItemPosition()).getId();
+                    allocate_chemist_to_mr(MR_id, chemist_id);
                 }
             }
         });

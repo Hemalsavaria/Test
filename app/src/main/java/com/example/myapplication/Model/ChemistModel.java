@@ -6,7 +6,7 @@ public class ChemistModel {
 
 
     @SerializedName("id")
-    private Boolean success;
+    private String id;
 
     @SerializedName("chemist_name")
     private String chemist_name;
@@ -44,12 +44,12 @@ public class ChemistModel {
     }
 
 
-    public Boolean getSuccess() {
-        return success;
+    public String getId() {
+        return id;
     }
 
-    public void setSuccess(Boolean success) {
-        this.success = success;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getChemist_name() {
