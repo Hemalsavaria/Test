@@ -73,8 +73,8 @@ public class Doctors extends AppCompatActivity {
             getWindow().setStatusBarColor(getResources().getColor(R.color.toolbar_color));
         }
 
-        cityarrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, city_name);
-        areaarrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, area_name);
+        cityarrayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, city_name);
+        areaarrayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, area_name);
 
         recyclerView = findViewById(R.id.recylerview);
         doctorsAdapter = new DoctorsAdapter(Doctor_list);

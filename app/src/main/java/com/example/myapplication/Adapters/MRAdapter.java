@@ -1,23 +1,37 @@
 package com.example.myapplication.Adapters;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.myapplication.Apis.Api;
+import com.example.myapplication.Apis.ApiServices;
+import com.example.myapplication.MR;
 import com.example.myapplication.Model.MRModel;
+import com.example.myapplication.Model.Result;
 import com.example.myapplication.Mr_reports;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MRAdapter extends RecyclerView.Adapter<MRAdapter.ViewHolder> {
     ArrayList<MRModel> mrModels;
@@ -77,10 +91,7 @@ public class MRAdapter extends RecyclerView.Adapter<MRAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView doctor_name, hospital_name, contact_number, email_id, address, password;
-
-        TextView reports, mr_details;
-
+        TextView doctor_name, hospital_name, contact_number, email_id, address, password, reports, mr_details, delete;
         GridLayout gridLayout;
         LinearLayout details;
 
@@ -92,7 +103,7 @@ public class MRAdapter extends RecyclerView.Adapter<MRAdapter.ViewHolder> {
             reports = list.findViewById(R.id.reports);
             details = list.findViewById(R.id.details);
             mr_details = list.findViewById(R.id.mr_details);
-
+            delete = list.findViewById(R.id.delete);
             contact_number = list.findViewById(R.id.contact_number);
             email_id = list.findViewById(R.id.email_id);
             address = list.findViewById(R.id.address);
@@ -108,7 +119,70 @@ public class MRAdapter extends RecyclerView.Adapter<MRAdapter.ViewHolder> {
                 }
             });
 
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final Dialog dialog = new Dialog(context, R.style.MyAlertDialogStyle);
+                    dialog.setContentView(R.layout.dialog_comfirmation);
+
+                    Button cancel = dialog.findViewById(R.id.cancel);
+                    Button comfirm = dialog.findViewById(R.id.comfirm);
+
+                    cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    comfirm.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                            delete_mr(mrModels.get(getAdapterPosition()).getId());
+                        }
+                    });
+                }
+            });
+
         }
+    }
+
+
+    void delete_mr(String id) {
+        final ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiServices apiServices = retrofit.create(ApiServices.class);
+
+        Call<Result> call = apiServices.delete_mr(id);
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (response.body().getSuccess()) {
+                        Toast.makeText(context, response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(context, response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(context, "Somethings are Wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

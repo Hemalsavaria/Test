@@ -71,7 +71,7 @@ public class Senior extends AppCompatActivity {
         }
 
         //  add_senior = findViewById(R.id.add_senior);
-        postAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, post_name);
+        postAdapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, post_name);
 
         recyclerView = findViewById(R.id.recylerview);
         seniorAdapter = new SeniorAdapter(seniorlist, Senior.this);

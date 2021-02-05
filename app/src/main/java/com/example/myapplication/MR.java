@@ -76,8 +76,8 @@ public class MR extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MR.this));
         recyclerView.setAdapter(mrAdapter);
 
-        cityarrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, city_name);
-        areaarrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, area_name);
+        cityarrayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, city_name);
+        areaarrayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, area_name);
 
         get_allMR();
         get_citylist();

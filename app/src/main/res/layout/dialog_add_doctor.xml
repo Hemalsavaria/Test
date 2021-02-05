@@ -144,8 +144,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
+                        android:backgroundTint="@color/black"
                         android:entries="@array/city"
-                        android:padding="@dimen/_5sdp" />
+                        android:padding="@dimen/_5sdp"
+                        android:popupBackground="@color/white" />
 
                 </LinearLayout>
 
@@ -157,12 +159,14 @@
                     android:background="@drawable/roundwhite_grey">
 
                     <Spinner
+                        android:backgroundTint="@color/black"
                         android:id="@+id/city_list"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
                         android:entries="@array/city"
-                        android:padding="@dimen/_5sdp" />
+                        android:padding="@dimen/_5sdp"
+                        android:popupBackground="@color/white" />
 
                 </LinearLayout>
 

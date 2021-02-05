@@ -145,4 +145,11 @@ public interface ApiServices {
             @Field("city") String city
     );
 
+    @FormUrlEncoded
+    @POST("delete_mr")
+    Call<Result> delete_mr(
+            @Field("id") String mr_name
+    );
+
+
 }

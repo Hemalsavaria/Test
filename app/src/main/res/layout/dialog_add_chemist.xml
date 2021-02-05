@@ -144,8 +144,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
+                        android:backgroundTint="@color/black"
                         android:entries="@array/city"
-                        android:padding="@dimen/_5sdp" />
+                        android:padding="@dimen/_5sdp"
+                        android:popupBackground="@color/white" />
 
                 </LinearLayout>
 
@@ -161,8 +163,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
+                        android:backgroundTint="@color/black"
                         android:entries="@array/city"
-                        android:padding="@dimen/_5sdp" />
+                        android:padding="@dimen/_5sdp"
+                        android:popupBackground="@color/white" />
 
                 </LinearLayout>
 

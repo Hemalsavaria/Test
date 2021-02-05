@@ -72,8 +72,8 @@ public class Chemist extends AppCompatActivity {
             getWindow().setStatusBarColor(getResources().getColor(R.color.toolbar_color));
         }
 
-        cityarrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, city_name);
-        areaarrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, area_name);
+        cityarrayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, city_name);
+        areaarrayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, area_name);
 
         recyclerView = findViewById(R.id.recylerview);
         chemistAdapter = new ChemistAdapter(chemist_list);
@@ -146,7 +146,7 @@ public class Chemist extends AppCompatActivity {
                         all_city_list.clear();
                         city_name.clear();
                         all_city_list.addAll(response.body().getCity_list());
-                        city_name.add("Select Area");
+                        city_name.add("Select City");
                         for (int i = 0; i < all_city_list.size(); i++) {
                             city_name.add(response.body().getCity_list().get(i).getCity_name());
                         }
