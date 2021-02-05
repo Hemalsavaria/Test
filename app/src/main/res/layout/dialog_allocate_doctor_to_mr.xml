@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_new_mr"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="vertical"
     android:windowSoftInputMode="adjustResize">
@@ -21,7 +21,7 @@
             android:fontFamily="@font/avenir_regular"
             android:gravity="center"
             android:padding="@dimen/_5sdp"
-            android:text="New Doctor"
+            android:text="Allocate New Doctor / Chemist"
             android:textColor="@color/white"
             android:textSize="19sp" />
     </LinearLayout>
@@ -44,94 +44,6 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <EditText
-                    android:id="@+id/mr_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/roundwhite_grey"
-                    android:fontFamily="@font/avenir_regular"
-                    android:hint="Name"
-                    android:inputType="text"
-                    android:padding="10dp" />
-
-                <EditText
-                    android:id="@+id/mr_contact"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/roundwhite_grey"
-
-                    android:fontFamily="@font/avenir_regular"
-                    android:hint="Contact Number"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:padding="@dimen/_5sdp" />
-
-                <EditText
-                    android:id="@+id/mr_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/roundwhite_grey"
-                    android:fontFamily="@font/avenir_regular"
-                    android:hint="Email Id"
-                    android:inputType="textEmailAddress"
-                    android:padding="@dimen/_5sdp" />
-
-                <EditText
-                    android:id="@+id/hospital_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/roundwhite_grey"
-                    android:fontFamily="@font/avenir_regular"
-                    android:hint="Medical / Hospital Name"
-                    android:padding="@dimen/_5sdp" />
-
-                <EditText
-                    android:id="@+id/birth_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/roundwhite_grey"
-                    android:editable="false"
-                    android:fontFamily="@font/avenir_regular"
-                    android:hint="Birth Date"
-                    android:padding="@dimen/_5sdp" />
-
-                <EditText
-                    android:id="@+id/Ann_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/roundwhite_grey"
-                    android:editable="false"
-                    android:fontFamily="@font/avenir_regular"
-                    android:hint="Anniversary Date"
-                    android:padding="@dimen/_5sdp" />
-
-                <EditText
-                    android:id="@+id/practice_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/roundwhite_grey"
-                    android:editable="false"
-                    android:fontFamily="@font/avenir_regular"
-                    android:hint="Practice Date"
-                    android:padding="@dimen/_5sdp" />
-
-                <!--        <EditText-->
-
-                <!--            android:layout_width="match_parent"-->
-                <!--            android:layout_height="50dp"-->
-                <!--            android:layout_margin="10dp"-->
-                <!--            android:background="@drawable/roundwhite_grey"-->
-                <!--            android:fontFamily="@font/avenir_regular"-->
-                <!--            android:hint="Create Password"-->
-                <!--            android:inputType="textEmailAddress"-->
-                <!--            android:padding="@dimen/_5sdp" />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -140,12 +52,11 @@
                     android:background="@drawable/roundwhite_grey">
 
                     <Spinner
-                        android:id="@+id/area_list"
+                        android:id="@+id/select_type"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@color/black"
-
                         android:padding="@dimen/_5sdp"
                         android:popupBackground="@color/white" />
 
@@ -156,15 +67,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@drawable/roundwhite_grey">
+                    android:background="@drawable/roundwhite_grey"
+                    android:gravity="center">
 
                     <Spinner
-                        android:id="@+id/city_list"
+                        android:id="@+id/names_list"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@color/black"
+                        android:padding="@dimen/_5sdp"
+                        android:popupBackground="@color/white" />
 
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundwhite_grey"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/avenir_regular"
+                        android:gravity="left"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Select Total Visit"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <Spinner
+                        android:id="@+id/visit_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:backgroundTint="@color/black"
                         android:padding="@dimen/_5sdp"
                         android:popupBackground="@color/white" />
 

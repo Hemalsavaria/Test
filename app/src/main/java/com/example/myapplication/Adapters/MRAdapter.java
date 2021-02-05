@@ -124,9 +124,9 @@ public class MRAdapter extends RecyclerView.Adapter<MRAdapter.ViewHolder> {
                 public void onClick(View v) {
                     final Dialog dialog = new Dialog(context, R.style.MyAlertDialogStyle);
                     dialog.setContentView(R.layout.dialog_comfirmation);
-
-                    Button cancel = dialog.findViewById(R.id.cancel);
-                    Button comfirm = dialog.findViewById(R.id.comfirm);
+                    dialog.show();
+                    TextView cancel = dialog.findViewById(R.id.cancel);
+                    TextView comfirm = dialog.findViewById(R.id.comfirm);
 
                     cancel.setOnClickListener(new View.OnClickListener() {
                         @Override

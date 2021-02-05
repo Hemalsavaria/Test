@@ -14,11 +14,24 @@ public class SeniorModel {
     @SerializedName("contact_no")
     private String contact_no;
 
+    @SerializedName("password")
+    private String password;
+
+
+
     @SerializedName("email")
     private String email;
 
     @SerializedName("post_name")
     private String post_name;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getId() {
         return id;

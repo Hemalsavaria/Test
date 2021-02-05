@@ -20,15 +20,20 @@
     <string name="title_activity_mr_chemist_visit_report">Mr_chemist_visit_report</string>
     <string name="title_activity_test">test</string>
 
-    <string-array name="city">
-        <item>Ahmedabad</item>
-        <item>Ahmedabad</item>
-        <item>Ahmedabad</item>
-        <item>Ahmedabad</item>
-        <item>Ahmedabad</item>
-        <item>Ahmedabad</item>
-        <item>Ahmedabad</item>
-    </string-array>
     <string name="title_activity_senior">Senior</string>
     <string name="title_activity_senior_m_r_list">SeniorMRList</string>
+
+
+    <string-array name="count">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="select_type_mr">
+        <item>Doctors</item>
+        <item>Chemist</item>
+    </string-array>
+
+
 </resources>

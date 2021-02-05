@@ -46,6 +46,7 @@ public class SeniorAdapter extends RecyclerView.Adapter<SeniorAdapter.ViewHolder
         model = seniorModels.get(position);
         holder.doctor_name.setText(model.getSenior_name());
         holder.emp_post.setText(model.getPost_name());
+        holder.password.setText(model.getPassword());
 
 
         holder.contact_number.setText(model.getContact_no());

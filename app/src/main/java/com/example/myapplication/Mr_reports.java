@@ -1,11 +1,17 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +25,8 @@ import com.example.myapplication.Adapters.MRChemistListAdapter;
 import com.example.myapplication.Adapters.MRDoctorListAdapter;
 import com.example.myapplication.Apis.Api;
 import com.example.myapplication.Apis.ApiServices;
+import com.example.myapplication.Model.ChemistModel;
+import com.example.myapplication.Model.DoctorModel;
 import com.example.myapplication.Model.MR_chemist_Model;
 import com.example.myapplication.Model.MR_doctor_Model;
 import com.example.myapplication.Model.Result;
@@ -38,11 +46,16 @@ public class Mr_reports extends AppCompatActivity {
     MRDoctorListAdapter mrDoctorReportsAdapter;
     MRChemistListAdapter mrChemistReportsAdapter;
 
+    ArrayList<ChemistModel> chemist_list = new ArrayList<>();
+    ArrayList<DoctorModel> Doctor_list = new ArrayList<>();
+    ArrayList<String> doctor_chemist_name_list = new ArrayList<>();
+
+    ArrayAdapter arrayAdapter;
     RecyclerView recyclerView;
     TextView name, doctors, chemist;
-    String id;
-
-
+    String MR_id;
+    Dialog dialog_new_allocation;
+    int selected_type = 0;
     Spinner select_month, selecyear;
     String select_month_data[] = {"January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     String selecyear_data[] = {"2021", "2020", "2019"};
@@ -73,7 +86,7 @@ public class Mr_reports extends AppCompatActivity {
         ArrayAdapter<String> adapter_selecyear = new ArrayAdapter<String>(Mr_reports.this, R.layout.spinner_item, selecyear_data);
         selecyear.setAdapter(adapter_selecyear);
 
-        id = getIntent().getStringExtra("mr_id");
+        MR_id = getIntent().getStringExtra("mr_id");
         String mr_name = getIntent().getStringExtra("mr_name");
         name = findViewById(R.id.mr_name);
         name.setText(mr_name);
@@ -84,7 +97,7 @@ public class Mr_reports extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(Mr_reports.this));
         recyclerView.setAdapter(mrDoctorReportsAdapter);
-        get_Doctors_reports(id);
+        get_Doctors_reports(MR_id);
 
         doctors.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
@@ -96,7 +109,7 @@ public class Mr_reports extends AppCompatActivity {
                 chemist.setBackgroundColor(getResources().getColor(R.color.white));
                 chemist.setTextColor(getResources().getColor(R.color.toolbar_color));
                 recyclerView.setAdapter(mrDoctorReportsAdapter);
-                get_Doctors_reports(id);
+                get_Doctors_reports(MR_id);
             }
         });
 
@@ -110,13 +123,98 @@ public class Mr_reports extends AppCompatActivity {
                 doctors.setBackgroundColor(getResources().getColor(R.color.white));
                 doctors.setTextColor(getResources().getColor(R.color.toolbar_color));
                 recyclerView.setAdapter(mrChemistReportsAdapter);
-                get_Chemist_reports(id);
+                get_Chemist_reports(MR_id);
             }
         });
 
 
     }
 
+    void get_allDoctors() {
+
+        final ProgressDialog progressDialog = new ProgressDialog(Mr_reports.this);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiServices apiServices = retrofit.create(ApiServices.class);
+
+        Call<Result> call = apiServices.get_all_doctor_list("");
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (response.body().getSuccess()) {
+                        Doctor_list.clear();
+                        doctor_chemist_name_list.clear();
+                        Doctor_list.addAll(response.body().getDoctor_list());
+                        for (int i = 0; i < Doctor_list.size(); i++) {
+                            doctor_chemist_name_list.add(Doctor_list.get(i).getDoctor_name());
+                        }
+                        arrayAdapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Somethings are Wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    void get_allChemist() {
+
+        final ProgressDialog progressDialog = new ProgressDialog(Mr_reports.this);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiServices apiServices = retrofit.create(ApiServices.class);
+
+        Call<Result> call = apiServices.get_all_Chemist_list("");
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (response.body().getSuccess()) {
+                        chemist_list.clear();
+                        doctor_chemist_name_list.clear();
+                        chemist_list.addAll(response.body().getChemist_list());
+                        for (int i = 0; i < chemist_list.size(); i++) {
+                            doctor_chemist_name_list.add(chemist_list.get(i).getChemist_name());
+                        }
+                        arrayAdapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Somethings are Wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     void get_Doctors_reports(String id) {
 
@@ -196,6 +294,175 @@ public class Mr_reports extends AppCompatActivity {
         });
     }
 
+    void allocate_doctor_to_mr() {
+
+        final ProgressDialog progressDialog = new ProgressDialog(Mr_reports.this);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiServices apiServices = retrofit.create(ApiServices.class);
+
+        Call<Result> call = apiServices.get_all_doctor_list("");
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (response.body().getSuccess()) {
+                        Doctor_list.clear();
+                        doctor_chemist_name_list.clear();
+                        Doctor_list.addAll(response.body().getDoctor_list());
+                        for (int i = 0; i < Doctor_list.size(); i++) {
+                            doctor_chemist_name_list.add(Doctor_list.get(i).getDoctor_name());
+                        }
+                        arrayAdapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Somethings are Wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    void allocate_chemist_to_mr() {
+
+        final ProgressDialog progressDialog = new ProgressDialog(Mr_reports.this);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiServices apiServices = retrofit.create(ApiServices.class);
+
+        Call<Result> call = apiServices.get_all_doctor_list("");
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (response.body().getSuccess()) {
+                        Doctor_list.clear();
+                        doctor_chemist_name_list.clear();
+                        Doctor_list.addAll(response.body().getDoctor_list());
+                        for (int i = 0; i < Doctor_list.size(); i++) {
+                            doctor_chemist_name_list.add(Doctor_list.get(i).getDoctor_name());
+                        }
+                        arrayAdapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Somethings are Wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+
+    private void open_dialog() {
+
+
+        dialog_new_allocation = new Dialog(Mr_reports.this, R.style.MyAlertDialogStyle);
+        dialog_new_allocation.setContentView(R.layout.dialog_allocate_doctor_to_mr);
+
+        get_allDoctors();
+
+        Spinner spn_selection_type = dialog_new_allocation.findViewById(R.id.select_type);
+        Spinner spn_doctor_chemist_names = dialog_new_allocation.findViewById(R.id.names_list);
+        Spinner visit_count = dialog_new_allocation.findViewById(R.id.visit_count);
+
+        ArrayAdapter spn_type_adapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, getResources().getTextArray(R.array.select_type_mr));
+        ArrayAdapter spn_visit_adapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, getResources().getTextArray(R.array.count));
+        arrayAdapter = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item, doctor_chemist_name_list);
+
+        spn_selection_type.setAdapter(spn_type_adapter);
+        spn_doctor_chemist_names.setAdapter(arrayAdapter);
+        visit_count.setAdapter(spn_visit_adapter);
+
+        Button cancel = dialog_new_allocation.findViewById(R.id.cancel);
+        Button submit = dialog_new_allocation.findViewById(R.id.submit);
+
+        spn_selection_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    selected_type = position;
+                    get_allDoctors();
+                } else {
+                    selected_type = position;
+                    get_allChemist();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog_new_allocation.dismiss();
+            }
+        });
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selected_type == 0) {
+                    allocate_doctor_to_mr();
+                } else {
+                    allocate_chemist_to_mr();
+                }
+            }
+        });
+
+        dialog_new_allocation.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.add_menu, menu); //your file name
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.new_details:
+                open_dialog();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     @Override
     public void onBackPressed() {
