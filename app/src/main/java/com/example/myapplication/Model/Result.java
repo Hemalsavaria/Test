@@ -40,6 +40,28 @@ public class Result {
     @SerializedName("post_list")
     private ArrayList<PostModel> post_list;
 
+    @SerializedName("mr_attendance_list")
+    private ArrayList<MrAttendanceModel> mr_attendance_list;
+
+    @SerializedName("senior_attendance_list")
+    private ArrayList<SeniorAttendanceModel> senior_attendance_list;
+
+    public ArrayList<SeniorAttendanceModel> getSenior_attendance_list() {
+        return senior_attendance_list;
+    }
+
+    public void setSenior_attendance_list(ArrayList<SeniorAttendanceModel> senior_attendance_list) {
+        this.senior_attendance_list = senior_attendance_list;
+    }
+
+    public ArrayList<MrAttendanceModel> getMr_attendance_list() {
+        return mr_attendance_list;
+    }
+
+    public void setMr_attendance_list(ArrayList<MrAttendanceModel> mr_attendance_list) {
+        this.mr_attendance_list = mr_attendance_list;
+    }
+
     public ArrayList<PostModel> getPost_list() {
         return post_list;
     }

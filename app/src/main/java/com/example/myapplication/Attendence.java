@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,14 +11,35 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.Adapters.DoctorsAdapter;
+import com.example.myapplication.Adapters.MRAttendanceAdapter;
+import com.example.myapplication.Adapters.SeniorAttendanceAdapter;
+import com.example.myapplication.Apis.Api;
+import com.example.myapplication.Apis.ApiServices;
+import com.example.myapplication.Model.CityModel;
+import com.example.myapplication.Model.MrAttendanceModel;
+import com.example.myapplication.Model.Result;
+import com.example.myapplication.Model.SeniorAttendanceModel;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Attendence extends AppCompatActivity {
     TextView attendence_date;
@@ -30,6 +52,13 @@ public class Attendence extends AppCompatActivity {
     MaterialSpinner select_month, filter_type, present_absent;
     ImageView filter;
 
+    RecyclerView recyclerView;
+
+    ArrayList<MrAttendanceModel> mrAttendancelist = new ArrayList<>();
+    ArrayList<SeniorAttendanceModel> seniorAttendanceModels = new ArrayList<>();
+    MRAttendanceAdapter mrAttendanceAdapter;
+    SeniorAttendanceAdapter seniorAttendanceAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +68,31 @@ public class Attendence extends AppCompatActivity {
 
         init();
 
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String formattedDate = df.format(c);
+        Log.d("Current_date", formattedDate);
+        get_attendance(formattedDate, "3", "1");
+
     }
 
     public void init() {
+
+        recyclerView = findViewById(R.id.attendence_recycle);
+
+        recyclerView = findViewById(R.id.attendence_recycle);
+        mrAttendanceAdapter = new MRAttendanceAdapter(mrAttendancelist, Attendence.this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Attendence.this));
+        recyclerView.setAdapter(mrAttendanceAdapter);
+        ImageView back = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         filter = findViewById(R.id.filter);
 
         filter.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +101,7 @@ public class Attendence extends AppCompatActivity {
                 dialog_filter();
             }
         });
+
     }
 
     public void dialog_filter() {
@@ -131,9 +183,55 @@ public class Attendence extends AppCompatActivity {
 
     }
 
-    public void select_date(){
-
+    public void select_date() {
 
 
     }
+
+    void get_attendance(String date, String status, String filter_type) {
+
+        final ProgressDialog progressDialog = new ProgressDialog(Attendence.this);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiServices apiServices = retrofit.create(ApiServices.class);
+
+        Call<Result> call = apiServices.get_attendance(date, status, filter_type);
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (response.body().getSuccess()) {
+                        mrAttendancelist.clear();
+                        mrAttendancelist.addAll(response.body().getMr_attendance_list());
+                        mrAttendanceAdapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Somethings are Wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
 }

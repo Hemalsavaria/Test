@@ -170,4 +170,13 @@ public interface ApiServices {
     );
 
 
+    @FormUrlEncoded
+    @POST("get_attendance")
+    Call<Result> get_attendance(
+            @Field("current_date") String current_date,
+            @Field("atd_status_type") String atd_status_type,
+            @Field("atnds_type") String atnds_type
+    );
+
+
 }
