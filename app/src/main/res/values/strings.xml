@@ -21,7 +21,7 @@
 	<string name="title_activity_test">test</string>
 
 	<string name="title_activity_senior">Senior</string>
-	<string name="title_activity_senior_m_r_list">SeniorMRList</string>
+	<string name="title_activity_senior_m_r_list">Allocated MR</string>
 
 
 	<string-array name="count">
@@ -36,6 +36,9 @@
 	</string-array>
 	<string name="title_activity_attendence">Attendence</string>
 	<string name="title_activity_expense">Expense</string>
+	<string name="title_activity_m_r_expense">MR_expense</string>
+	<string name="title_activity_workplace">Workplace</string>
+	<string name="title_activity_worktype">Worktype</string>
 
 
 </resources>

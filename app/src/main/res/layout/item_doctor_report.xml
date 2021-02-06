@@ -70,6 +70,7 @@
                     android:padding="@dimen/_5sdp">
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/counts"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

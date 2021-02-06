@@ -1,0 +1,184 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/layout_new_mr"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/toolbar_color"
+		android:gravity="center">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/_5sdp"
+			android:fontFamily="@font/avenir_regular"
+			android:gravity="center"
+			android:padding="@dimen/_5sdp"
+			android:text="Expense"
+			android:textColor="@color/white"
+			android:textSize="19sp" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:orientation="vertical"
+		android:padding="10dp">
+
+		<LinearLayout
+			android:layout_margin="5dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:background="@color/white"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<TextView
+
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="10dp"
+				android:layout_weight="2.5"
+				android:fontFamily="@font/avenir_regular"
+				android:gravity="center"
+				android:hint="MR -"
+				android:inputType="number"
+				android:padding="10dp"
+				android:textColor="@color/black"
+				android:textSize="19sp" />
+
+			<EditText
+				android:id="@+id/dilog_mr_expense"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:layout_weight="1"
+				android:background="@drawable/roundwhite_grey"
+				android:fontFamily="@font/avenir_regular"
+				android:hint="Daily Expense For MR in RS"
+				android:inputType="number"
+				android:padding="10dp" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_margin="5dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:background="@color/white"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="10dp"
+				android:layout_weight="2.5"
+				android:fontFamily="@font/avenir_regular"
+				android:gravity="center"
+				android:hint="Senior -"
+				android:inputType="number"
+				android:padding="10dp"
+				android:textColor="@color/black"
+				android:textSize="19sp" />
+
+			<EditText
+				android:background="@drawable/roundwhite_grey"
+				android:id="@+id/dilog_senior_expense"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:layout_weight="1"
+				android:fontFamily="@font/avenir_regular"
+				android:hint="Daily Expense For Senior in RS"
+				android:inputType="number"
+				android:maxLength="10"
+				android:padding="@dimen/_5sdp" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_margin="5dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:background="@color/white"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="10dp"
+				android:layout_weight="2.5"
+				android:fontFamily="@font/avenir_regular"
+				android:gravity="center"
+				android:hint="Rs/KM -"
+				android:inputType="number"
+				android:padding="10dp"
+				android:textColor="@color/black"
+				android:textSize="19sp" />
+
+			<EditText
+				android:background="@drawable/roundwhite_grey"
+				android:id="@+id/dilog_per_km_expense"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:layout_weight="1"
+				android:fontFamily="@font/avenir_regular"
+				android:hint="Expense per KM in RS"
+				android:inputType="number"
+				android:padding="@dimen/_5sdp" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_margin="10dp"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/cancel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="10dp"
+				android:layout_weight="1"
+				android:background="@drawable/roundwhite_grey"
+				android:fontFamily="@font/avenir_regular"
+				android:gravity="center"
+				android:text="Cancel"
+				android:textAllCaps="false"
+				android:textColor="@color/toolbar_color"
+				android:textSize="17sp" />
+
+
+			<Button
+				android:id="@+id/submit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_margin="10dp"
+				android:layout_weight="1"
+				android:background="@drawable/blue"
+				android:fontFamily="@font/avenir_regular"
+				android:gravity="center"
+				android:text="Submit"
+				android:textAllCaps="false"
+				android:textColor="@color/white"
+				android:textSize="17sp" />
+
+		</LinearLayout>
+	</LinearLayout>
+
+</LinearLayout>
