@@ -41,7 +41,7 @@
 
 					<LinearLayout
 						android:layout_width="match_parent"
-						android:layout_height="@dimen/_100sdp"
+						android:layout_height="@dimen/_130sdp"
 						android:background="@color/toolbar_color"
 						android:gravity="center"
 						android:orientation="vertical">
@@ -59,12 +59,12 @@
 						<TextView
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_10sdp"
+
 							android:fontFamily="@font/avenir_regular"
+							android:padding="10dp"
 							android:text="Avriva Medicure"
 							android:textColor="@color/white"
-							android:textSize="@dimen/_15sdp"
-							android:textStyle="bold" />
+							android:textSize="@dimen/_15sdp" />
 
 					</LinearLayout>
 
@@ -73,17 +73,14 @@
 						android:layout_height="match_parent"
 						android:background="@color/white"
 						android:gravity="center_horizontal"
-						android:orientation="vertical"
-						android:paddingLeft="@dimen/_15sdp"
-						android:paddingTop="@dimen/_10sdp"
-						android:paddingRight="@dimen/_15sdp">
+						android:orientation="vertical">
 
 						<LinearLayout
 
 							android:id="@+id/dwr_mrs"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_10sdp"
+							android:layout_gravity="center"
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -92,7 +89,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_task" />
+								android:src="@drawable/ic_task"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -101,17 +99,17 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
-								android:text="MRs"
+								android:padding="10dp"
+								android:text="Medical Representative"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
+
 							android:background="@color/grey_light" />
 
 						<LinearLayout
@@ -119,7 +117,7 @@
 							android:id="@+id/dwr_sr"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_10sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -128,7 +126,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_task" />
+								android:src="@drawable/ic_task"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -137,17 +136,17 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Seniors"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
+
 							android:background="@color/grey_light" />
 
 						<LinearLayout
@@ -155,7 +154,7 @@
 							android:id="@+id/dwr_doctor"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -164,7 +163,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_doctor" />
+								android:src="@drawable/ic_doctor"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -173,24 +173,24 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Doctors"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
+
 							android:background="@color/grey_light" />
 
 						<LinearLayout
 							android:id="@+id/dwr_chemist"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -199,7 +199,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_doctor" />
+								android:src="@drawable/ic_doctor"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -208,24 +209,24 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Chemist"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
+
 							android:background="@color/grey_light" />
 
 						<LinearLayout
 							android:id="@+id/dwr_atdnc"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -234,7 +235,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_attendance" />
+								android:src="@drawable/ic_attendance"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -243,24 +245,24 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Attendance"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
+
 							android:background="@color/grey_light" />
 
 						<LinearLayout
 							android:id="@+id/dwr_expense"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -269,7 +271,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_attendance" />
+								android:src="@drawable/ic_attendance"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -278,24 +281,24 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Expense"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
+
 							android:background="@color/grey_light" />
 
 						<LinearLayout
 							android:id="@+id/dwr_expense_daily"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -304,7 +307,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_attendance" />
+								android:src="@drawable/ic_attendance"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -313,17 +317,17 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Expense RS"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
+
 							android:background="@color/grey_light" />
 
 
@@ -331,7 +335,7 @@
 							android:id="@+id/dwr_task"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -340,7 +344,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_attendance" />
+								android:src="@drawable/ic_attendance"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -349,24 +354,24 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Task"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
+
 							android:background="@color/grey_light" />
 
 						<LinearLayout
 							android:id="@+id/dwr_workplace"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -375,7 +380,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_attendance" />
+								android:src="@drawable/ic_attendance"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -384,17 +390,16 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Workplace"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
 							android:background="@color/grey_light" />
 
 
@@ -402,7 +407,7 @@
 							android:id="@+id/dwr_worktype"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -411,7 +416,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_attendance" />
+								android:src="@drawable/ic_attendance"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -420,23 +426,58 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Work-type"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 
 						<LinearLayout
 							android:layout_width="match_parent"
 							android:layout_height="@dimen/_1sdp"
-							android:layout_marginTop="@dimen/_2sdp"
 							android:background="@color/grey_light" />
+
+						<LinearLayout
+							android:id="@+id/dwr_analysis"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+
+							android:background="#00FFFFFF"
+							android:gravity="center"
+							android:orientation="horizontal"
+							android:padding="@dimen/_5sdp">
+
+							<ImageView
+								android:layout_width="@dimen/_23sdp"
+								android:layout_height="@dimen/_23sdp"
+								android:src="@drawable/ic_attendance"
+								android:visibility="gone" />
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginLeft="@dimen/_10sdp"
+								android:layout_weight="1"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="left"
+								android:padding="10dp"
+								android:text="Analysis"
+								android:textColor="@color/toolbar_color"
+								android:textSize="17sp" />
+
+						</LinearLayout>
+
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="@dimen/_1sdp"
+							android:background="@color/grey_light" />
+
 						<LinearLayout
 							android:id="@+id/dwr_logout"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:layout_marginTop="@dimen/_13sdp"
+
 							android:background="#00FFFFFF"
 							android:gravity="center"
 							android:orientation="horizontal"
@@ -446,7 +487,8 @@
 							<ImageView
 								android:layout_width="@dimen/_23sdp"
 								android:layout_height="@dimen/_23sdp"
-								android:src="@drawable/ic_logout" />
+								android:src="@drawable/ic_logout"
+								android:visibility="gone" />
 
 							<TextView
 								android:layout_width="match_parent"
@@ -455,10 +497,10 @@
 								android:layout_weight="1"
 								android:fontFamily="@font/avenir_regular"
 								android:gravity="left"
+								android:padding="10dp"
 								android:text="Logout"
 								android:textColor="@color/toolbar_color"
-								android:textSize="17sp"
-								android:textStyle="bold" />
+								android:textSize="17sp" />
 
 						</LinearLayout>
 					</LinearLayout>
@@ -468,7 +510,7 @@
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="@dimen/_1sdp"
-					android:layout_marginTop="@dimen/_2sdp"
+
 					android:background="@color/grey_light" />
 
 

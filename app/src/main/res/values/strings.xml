@@ -39,6 +39,8 @@
 	<string name="title_activity_m_r_expense">MR_expense</string>
 	<string name="title_activity_workplace">Workplace</string>
 	<string name="title_activity_worktype">Worktype</string>
+	<string name="title_activity_analysis">Analysis</string>
+	<string name="title_activity_analysis_dr_chemist_list">Analysis_dr_chemist_list</string>
 
 
 </resources>

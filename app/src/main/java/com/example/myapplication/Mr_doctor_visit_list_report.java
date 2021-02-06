@@ -3,6 +3,8 @@ package com.example.myapplication;
 import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,8 +31,9 @@ public class Mr_doctor_visit_list_report extends AppCompatActivity {
     ArrayList<DoctorReportModel> doctorReportModels = new ArrayList<>();
     DoctorReportAdapter doctorsAdapter;
     RecyclerView recyclerView;
-
-
+    String select_month_data[] = {"January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    String selecyear_data[] = {"2021", "2020", "2019"};
+    Spinner select_month, selecyear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,13 @@ public class Mr_doctor_visit_list_report extends AppCompatActivity {
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.toolbar_color));
         }
+        select_month = findViewById(R.id.select_month);
+        ArrayAdapter<String> adapter_month = new ArrayAdapter<String>(Mr_doctor_visit_list_report.this, R.layout.spinner_item, select_month_data);
+        select_month.setAdapter(adapter_month);
+
+        selecyear = findViewById(R.id.selectyear);
+        ArrayAdapter<String> adapter_selecyear = new ArrayAdapter<String>(Mr_doctor_visit_list_report.this, R.layout.spinner_item, selecyear_data);
+        selecyear.setAdapter(adapter_selecyear);
 
         String mr_id = getIntent().getStringExtra("mr_id");
         String dr_id = getIntent().getStringExtra("dr_id");

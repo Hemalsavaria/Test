@@ -3,7 +3,10 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:orientation="vertical"
+	tools:showIn="@layout/activity_m_r_expense"
+	android:background="@color/grey_bg"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
@@ -11,14 +14,15 @@
 		android:id="@+id/mr_expense_moth"
 		android:layout_width="match_parent"
 		android:layout_height="50dp"
-		android:layout_marginBottom="2dp" />
+		android:layout_marginBottom="2dp"
+		android:textSize="17sp"
+		android:textColor="@color/toolbar_color" />
 
 
 	<androidx.cardview.widget.CardView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginBottom="2dp"
-		app:contentPadding="5dp">
+		android:layout_marginBottom="2dp">
 
 
 		<LinearLayout
@@ -35,7 +39,8 @@
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:orientation="horizontal"
+					android:background="#F2F5FC"
+					android:orientation="vertical"
 					android:padding="5dp">
 
 					<TextView
@@ -45,10 +50,10 @@
 						android:layout_weight="1"
 						android:fontFamily="@font/avenir_regular"
 						android:gravity="center"
-						android:padding="5dp"
 						android:text="Ahmedabad to Baroda"
 						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
+						android:textSize="19sp"></TextView>
+
 
 					<TextView
 						android:layout_width="match_parent"
@@ -57,111 +62,173 @@
 						android:layout_weight="1"
 						android:fontFamily="@font/avenir_regular"
 						android:gravity="center"
-						android:padding="5dp"
 						android:text="05/02/2021"
 						android:textColor="@color/black"
 						android:textSize="17sp"></TextView>
-
-
 				</LinearLayout>
 
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:padding="5dp">
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:orientation="horizontal">
 
-					<TextView
+					<LinearLayout
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_gravity="center"
 						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
 						android:gravity="center"
-						android:padding="5dp"
-						android:text="45km / 10 Rs"
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
+						android:orientation="vertical">
 
-					<TextView
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal"
+							android:padding="5dp">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="45km"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:text="x"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="10"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="="
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:text="\u20B9 450"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+						</LinearLayout>
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal"
+							android:paddingLeft="5dp"
+							android:paddingRight="5dp">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="Daily Expense"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="="
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="\u20B9 250"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+						</LinearLayout>
+					</LinearLayout>
+
+					<RelativeLayout
+						android:layout_width="1dp"
+						android:layout_height="match_parent"
+						android:layout_margin="10dp"
+						android:background="@color/grey_bg" />
+
+					<LinearLayout
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_gravity="center"
 						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
 						android:gravity="center"
-						android:padding="5dp"
-						android:text="250 Rs "
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
+						android:orientation="vertical"
+						android:padding="5dp">
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_weight="1"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="Total"
+							android:textColor="@color/black"
+							android:textSize="17sp"></TextView>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_weight="1"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="\u20B9 700"
+							android:textColor="@color/black"
+							android:textSize="17sp"></TextView>
+
+					</LinearLayout>
 
 				</LinearLayout>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:padding="5dp">
-
-					<TextView
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
-						android:gravity="center"
-						android:padding="5dp"
-						android:text="Daily Ex"
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
-
-					<TextView
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
-						android:gravity="center"
-						android:padding="5dp"
-						android:text="250 Rs "
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
-
-				</LinearLayout>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:padding="5dp">
-
-					<TextView
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
-						android:gravity="center"
-						android:padding="5dp"
-						android:text="Total -"
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
-
-					<TextView
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
-						android:gravity="center"
-						android:padding="5dp"
-						android:text="500 Rs "
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
-
-				</LinearLayout>
-
-
 			</LinearLayout>
 
 
@@ -172,8 +239,8 @@
 	<androidx.cardview.widget.CardView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginBottom="5dp"
-		app:contentPadding="5dp">
+		android:layout_marginBottom="2dp">
+
 
 		<LinearLayout
 			android:layout_width="match_parent"
@@ -189,7 +256,8 @@
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:orientation="horizontal"
+					android:background="#F2F5FC"
+					android:orientation="vertical"
 					android:padding="5dp">
 
 					<TextView
@@ -199,10 +267,10 @@
 						android:layout_weight="1"
 						android:fontFamily="@font/avenir_regular"
 						android:gravity="center"
-						android:padding="5dp"
 						android:text="Ahmedabad to Baroda"
 						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
+						android:textSize="19sp"></TextView>
+
 
 					<TextView
 						android:layout_width="match_parent"
@@ -211,111 +279,173 @@
 						android:layout_weight="1"
 						android:fontFamily="@font/avenir_regular"
 						android:gravity="center"
-						android:padding="5dp"
 						android:text="05/02/2021"
 						android:textColor="@color/black"
 						android:textSize="17sp"></TextView>
-
-
 				</LinearLayout>
 
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:padding="5dp">
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:orientation="horizontal">
 
-					<TextView
+					<LinearLayout
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_gravity="center"
 						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
 						android:gravity="center"
-						android:padding="5dp"
-						android:text="45km / 10 Rs"
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
+						android:orientation="vertical">
 
-					<TextView
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal"
+							android:padding="5dp">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="45km"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:text="x"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="10"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="="
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:text="\u20B9 450"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+						</LinearLayout>
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal"
+							android:paddingLeft="5dp"
+							android:paddingRight="5dp">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="Daily Expense"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="="
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:fontFamily="@font/avenir_regular"
+								android:gravity="center"
+								android:padding="5dp"
+								android:text="\u20B9 250"
+								android:textColor="@color/black"
+								android:textSize="17sp"></TextView>
+
+						</LinearLayout>
+					</LinearLayout>
+
+					<RelativeLayout
+						android:layout_width="1dp"
+						android:layout_height="match_parent"
+						android:layout_margin="10dp"
+						android:background="@color/grey_bg" />
+
+					<LinearLayout
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_gravity="center"
 						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
 						android:gravity="center"
-						android:padding="5dp"
-						android:text="250 Rs "
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
+						android:orientation="vertical"
+						android:padding="5dp">
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_weight="1"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="Total"
+							android:textColor="@color/black"
+							android:textSize="17sp"></TextView>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_weight="1"
+							android:fontFamily="@font/avenir_regular"
+							android:gravity="center"
+							android:padding="5dp"
+							android:text="\u20B9 500"
+							android:textColor="@color/black"
+							android:textSize="17sp"></TextView>
+
+					</LinearLayout>
 
 				</LinearLayout>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:padding="5dp">
-
-					<TextView
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
-						android:gravity="center"
-						android:padding="5dp"
-						android:text="Daily Ex"
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
-
-					<TextView
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
-						android:gravity="center"
-						android:padding="5dp"
-						android:text="250 Rs "
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
-
-				</LinearLayout>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:padding="5dp">
-
-					<TextView
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
-						android:gravity="center"
-						android:padding="5dp"
-						android:text="Total -"
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
-
-					<TextView
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:layout_weight="1"
-						android:fontFamily="@font/avenir_regular"
-						android:gravity="center"
-						android:padding="5dp"
-						android:text="500 Rs "
-						android:textColor="@color/black"
-						android:textSize="17sp"></TextView>
-
-				</LinearLayout>
-
-
 			</LinearLayout>
 
 
@@ -342,7 +472,7 @@
 				android:fontFamily="@font/avenir_regular"
 				android:gravity="center"
 				android:padding="5dp"
-				android:text="Month Total - 1000 Rs"
+				android:text="Month Total  -  \u20B9 1000"
 				android:textColor="@color/black"
 				android:textSize="17sp"></TextView>
 

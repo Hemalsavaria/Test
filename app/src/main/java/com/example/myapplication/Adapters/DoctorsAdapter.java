@@ -45,7 +45,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.ViewHold
         holder.contact_number.setText(model.getContact_no());
         holder.email_id.setText(model.getEmail_id());
         holder.address.setText(model.getArea_name() + ", " + model.getCity_name());
-        holder.details.setVisibility(View.GONE);
+//        holder.details.setVisibility(View.GONE);
         holder.mr_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

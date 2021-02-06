@@ -4,7 +4,7 @@
     android:id="@+id/layout_new_mr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#eeeeee"
 
     android:orientation="vertical">
 
@@ -29,7 +29,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#eeeeee"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="@drawable/roundwhite_grey"
+            android:background="@drawable/roundwhite_10"
             android:fontFamily="@font/avenir_regular"
             android:hint="Name"
             android:inputType="text"
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="@drawable/roundwhite_grey"
+            android:background="@drawable/roundwhite_10"
 
             android:fontFamily="@font/avenir_regular"
             android:hint="Contact Number"
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="@drawable/roundwhite_grey"
+            android:background="@drawable/roundwhite_10"
             android:fontFamily="@font/avenir_regular"
             android:hint="Email Id"
             android:inputType="textEmailAddress"
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="@drawable/roundwhite_grey">
+            android:background="@drawable/roundwhite_10">
 
             <Spinner
                 android:backgroundTint="@color/black"
@@ -102,7 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="@drawable/roundwhite_grey">
+            android:background="@drawable/roundwhite_10">
 
             <Spinner
                 android:backgroundTint="@color/black"

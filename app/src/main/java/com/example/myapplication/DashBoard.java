@@ -14,7 +14,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 public class DashBoard extends AppCompatActivity {
 
-    LinearLayout dwr_doctor, dwr_chemist, dwr_atdnc, dwr_logout, dwr_mrs, dwr_sr, dwr_expense, dwr_expense_daily,dwr_task,dwr_workplace,dwr_worktype;
+    LinearLayout dwr_doctor, dwr_chemist, dwr_atdnc, dwr_logout, dwr_mrs, dwr_sr, dwr_expense, dwr_expense_daily,dwr_task,dwr_workplace,dwr_worktype,
+            dwr_analysis;
     DrawerLayout drawer;
 
     @Override
@@ -49,7 +50,8 @@ public class DashBoard extends AppCompatActivity {
         dwr_expense_daily = findViewById(R.id.dwr_expense_daily);
         dwr_task = findViewById(R.id.dwr_task);
         dwr_workplace = findViewById(R.id.dwr_workplace);
-        dwr_worktype = findViewById(R.id.dwr_worktype);
+          dwr_worktype = findViewById(R.id.dwr_worktype);
+        dwr_analysis = findViewById(R.id.dwr_analysis);
 
 
         dwr_sr.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +140,13 @@ public class DashBoard extends AppCompatActivity {
             public void onClick(View v) {
                 drawer.close();
                 startActivity(new Intent(DashBoard.this, Worktype.class));
+            }
+        });
+        dwr_analysis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawer.close();
+                startActivity(new Intent(DashBoard.this, Analysis.class));
             }
         });
     }
