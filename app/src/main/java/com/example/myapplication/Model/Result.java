@@ -46,6 +46,28 @@ public class Result {
     @SerializedName("senior_attendance_list")
     private ArrayList<SeniorAttendanceModel> senior_attendance_list;
 
+    @SerializedName("work_place")
+    private ArrayList<WorkplaceModel> work_place;
+
+    @SerializedName("work_type_list")
+    private ArrayList<WorktypeModel> work_type_list;
+
+    public ArrayList<WorktypeModel> getWork_type_list() {
+        return work_type_list;
+    }
+
+    public void setWork_type_list(ArrayList<WorktypeModel> work_type_list) {
+        this.work_type_list = work_type_list;
+    }
+
+    public ArrayList<WorkplaceModel> getWork_place() {
+        return work_place;
+    }
+
+    public void setWork_place(ArrayList<WorkplaceModel> work_place) {
+        this.work_place = work_place;
+    }
+
     public ArrayList<SeniorAttendanceModel> getSenior_attendance_list() {
         return senior_attendance_list;
     }

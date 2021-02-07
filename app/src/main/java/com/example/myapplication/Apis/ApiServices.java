@@ -178,5 +178,42 @@ public interface ApiServices {
             @Field("atnds_type") String atnds_type
     );
 
+    @FormUrlEncoded
+    @POST("get_work_place")
+    Call<Result> get_work_place(
+            @Field("field") String field
+    );
+
+    @FormUrlEncoded
+    @POST("delete_workplace")
+    Call<Result> delete_workplace(
+            @Field("id") String id
+    );
+
+    @FormUrlEncoded
+    @POST("add_workplace")
+    Call<Result> add_workplace(
+            @Field("name") String name
+    );
+
+
+    @FormUrlEncoded
+    @POST("get_work_type")
+    Call<Result> get_worktype(
+            @Field("field") String field
+    );
+
+    @FormUrlEncoded
+    @POST("Add_work_type")
+    Call<Result> Add_work_type(
+            @Field("work_type") String work_type
+    );
+
+    @FormUrlEncoded
+    @POST("delete_worktype")
+    Call<Result> delete_worktype(
+            @Field("id") String id
+    );
+
 
 }
