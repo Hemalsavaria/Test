@@ -3,38 +3,26 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 
-import com.jaredrummler.materialspinner.MaterialSpinner;
-
-public class Expense extends AppCompatActivity {
-
-    CardView card_expense;
+public class Analysis extends AppCompatActivity {
+    LinearLayout mr_analysis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expense);
+        setContentView(R.layout.activity_analysis);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        init();
-    }
-
-    public void init() {
-
-        card_expense = findViewById(R.id.card_expense);
-
-//
-
-        card_expense.setOnClickListener(new View.OnClickListener() {
+        mr_analysis = findViewById(R.id.mr_analysis);
+        mr_analysis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Expense.this, MR_expense.class));
+                startActivity(new Intent(Analysis.this, Analysis_dr_chemist_list.class));
             }
         });
     }

@@ -13,7 +13,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.example.myapplication.Model.SeniorModel;
 import com.example.myapplication.R;
 import com.example.myapplication.SeniorMRList;
@@ -51,17 +50,17 @@ public class SeniorAdapter extends RecyclerView.Adapter<SeniorAdapter.ViewHolder
 
         holder.contact_number.setText(model.getContact_no());
         holder.email_id.setText(model.getEmail());
-        holder.details.setVisibility(View.GONE);
+//        holder.details.setVisibility(View.GONE);
         holder.mr_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (open_details == false) {
-                    holder.details.setVisibility(View.VISIBLE);
-                    open_details = true;
-                } else {
-                    holder.details.setVisibility(View.GONE);
-                    open_details = false;
-                }
+//                if (open_details == false) {
+//                    holder.details.setVisibility(View.VISIBLE);
+//                    open_details = true;
+//                } else {
+//                    holder.details.setVisibility(View.GONE);
+//                    open_details = false;
+//                }
             }
         });
     }
@@ -78,7 +77,8 @@ public class SeniorAdapter extends RecyclerView.Adapter<SeniorAdapter.ViewHolder
         ImageView down_details;
         GridLayout gridLayout;
         LinearLayout details;
-        TextView reports, mr_details;
+        TextView mr_details;
+        ImageView reports;
 
         public ViewHolder(View list) {
             super(list);

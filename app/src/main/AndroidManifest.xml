@@ -11,9 +11,29 @@
 		android:theme="@style/AppTheme"
 		android:windowSoftInputMode="adjustResize">
 		<activity
+			android:name=".Analysis_dr_chemist_list"
+			android:label="@string/title_activity_analysis_dr_chemist_list"
+			android:theme="@style/AppTheme.NoActionBar"></activity>
+		<activity
+			android:name=".Analysis"
+			android:label="@string/title_activity_analysis"
+			android:theme="@style/AppTheme.NoActionBar" />
+		<activity
+			android:name=".Worktype"
+			android:label="@string/title_activity_worktype"
+			android:theme="@style/AppTheme.NoActionBar" />
+		<activity
+			android:name=".Workplace"
+			android:label="@string/title_activity_workplace"
+			android:theme="@style/AppTheme.NoActionBar" />
+		<activity
+			android:name=".MR_expense"
+			android:label="@string/title_activity_m_r_expense"
+			android:theme="@style/AppTheme.NoActionBar" />
+		<activity
 			android:name=".Expense"
 			android:label="@string/title_activity_expense"
-			android:theme="@style/AppTheme.NoActionBar"></activity>
+			android:theme="@style/AppTheme.NoActionBar" />
 		<activity
 			android:name=".Attendence"
 			android:label="@string/title_activity_attendence"

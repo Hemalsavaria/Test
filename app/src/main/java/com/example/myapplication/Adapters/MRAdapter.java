@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -91,10 +92,10 @@ public class MRAdapter extends RecyclerView.Adapter<MRAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView doctor_name, hospital_name, contact_number, email_id, address, password, reports, mr_details, delete;
+        TextView doctor_name, hospital_name, contact_number, email_id, address, password, mr_details ,delete;
         GridLayout gridLayout;
         LinearLayout details;
-
+ImageView reports;
         public ViewHolder(View list) {
             super(list);
 //            gridLayout = list.findViewById(R.id.staff_rec_design);
